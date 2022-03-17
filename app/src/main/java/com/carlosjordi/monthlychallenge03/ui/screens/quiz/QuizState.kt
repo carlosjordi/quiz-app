@@ -6,8 +6,8 @@ import com.carlosjordi.monthlychallenge03.data.repository.QuizRepositoryImpl
 
 data class QuizState(
 //    val quiz: Quiz = QuizRepositoryImpl().getQuiz(),
-    val timer: Long = 30_000L,
+    val timer: Int = 30,
     val isOptionSelected: Boolean = false,
-    val isRightAnswer: Boolean = false,
+    val isRightAnswer: Boolean? = null,
     val currentQuestion: Question
 )

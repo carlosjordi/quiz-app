@@ -1,32 +1,45 @@
 package com.carlosjordi.monthlychallenge03.ui.screens.quiz
 
 import android.os.CountDownTimer
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.res.stringArrayResource
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.carlosjordi.monthlychallenge03.data.repository.QuizRepository
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class QuizViewModel(
     private val quizRepository: QuizRepository
 ) : ViewModel() {
 
+    companion object {
+        private const val TIMER = 30_000L
+        private const val ONE_SECOND = 1_000L
+    }
+
     private val quiz = quizRepository.getQuiz()
     private var currentIndex = 0
+    private var rightAnswer = ""
+    private var selectedAnswer = ""
 
     var state by mutableStateOf(QuizState(currentQuestion = quiz.questions[currentIndex]))
         private set
 
-    private val timer = object : CountDownTimer(30_000L, 1_000L) {
+    private val timer = object : CountDownTimer(TIMER, ONE_SECOND) {
         override fun onTick(remainingTime: Long) {
+            val timeInSeconds = (remainingTime / ONE_SECOND).toInt()
             state = state.copy(
-                timer = remainingTime
+                timer = timeInSeconds
             )
         }
 
         override fun onFinish() {
-            TODO("Not yet implemented")
+
         }
     }
 
@@ -40,19 +53,40 @@ class QuizViewModel(
                 state = state.copy(
                     isOptionSelected = true
                 )
+                selectedAnswer = event.option
             }
             QuizEvent.ConfirmSelection -> {
-                timer.cancel()
-                currentIndex++
-                state = state.copy(
-                    currentQuestion = quiz.questions[currentIndex],
-                    isOptionSelected = false,
-                    timer = 30_000L
-                )
-                timer.start()
+                viewModelScope.launch {
+                    timer.cancel()
+                    state = if (selectedAnswer == rightAnswer) {
+                        state.copy(isRightAnswer = true)
+                    } else {
+                        state.copy(isRightAnswer = false)
+                    }
+                    delay(2000L)
+                    currentIndex++
+                    state = state.copy(
+                        currentQuestion = quiz.questions[currentIndex],
+                        isOptionSelected = false,
+                        timer = 30,
+                        isRightAnswer = null
+                    )
+                    timer.start()
+                }
             }
             QuizEvent.TimeRunOut -> TODO()
         }
+    }
+
+    fun saveRightAnswer(answer: String) {
+        rightAnswer = answer
+    }
+
+    @Composable
+    fun shuffleAnswers(): Array<String> {
+        val arrayRes = quiz.questions[currentIndex].answers
+        rightAnswer = stringArrayResource(arrayRes)[0]
+        return stringArrayResource(arrayRes).apply { shuffle() }
     }
 
     class QuizViewModelFactory(

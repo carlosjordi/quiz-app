@@ -5,10 +5,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
-import com.carlosjordi.monthlychallenge03.R
 
 @Composable
 fun QuizScreen(
@@ -19,7 +19,12 @@ fun QuizScreen(
     Column {
         Text(text = state.timer.toString())
         Text(text = stringResource(state.currentQuestion.question))
-        stringArrayResource(state.currentQuestion.answers).forEach { answer ->
+        val answers = stringArrayResource(state.currentQuestion.answers)
+        viewModel.saveRightAnswer(answers[0])
+        val shuffledAnswers = remember(state.currentQuestion) {
+            answers.toMutableList().shuffled()
+        }
+        shuffledAnswers.forEach { answer ->
             Text(
                 modifier = Modifier
                     .clickable { viewModel.onEvent(QuizEvent.SelectOption(answer)) },
