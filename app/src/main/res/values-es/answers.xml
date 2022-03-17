@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="answers_01">
+        <item>Respuesta 1</item>
+        <item>Respuesta 2</item>
+        <item>Respuesta 3</item>
+        <item>Respuesta 4</item>
+    </string-array>
+
+    <string-array name="answers_02">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+</resources>
