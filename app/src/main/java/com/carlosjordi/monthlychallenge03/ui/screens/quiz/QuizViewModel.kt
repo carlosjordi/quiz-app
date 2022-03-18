@@ -24,8 +24,6 @@ class QuizViewModel(
 
     private val quiz = quizRepository.getQuiz()
     private var currentIndex = 0
-    private var rightAnswer = ""
-    private var selectedAnswer = ""
 
     var state by mutableStateOf(QuizState(currentQuestion = quiz.questions[currentIndex]))
         private set
@@ -51,14 +49,14 @@ class QuizViewModel(
         when (event) {
             is QuizEvent.SelectOption -> {
                 state = state.copy(
-                    isOptionSelected = true
+                    isOptionSelected = true,
+                    selectedAnswer = event.option
                 )
-                selectedAnswer = event.option
             }
             QuizEvent.ConfirmSelection -> {
                 viewModelScope.launch {
                     timer.cancel()
-                    state = if (selectedAnswer == rightAnswer) {
+                    state = if (state.selectedAnswer == state.rightAnswer) {
                         state.copy(isRightAnswer = true)
                     } else {
                         state.copy(isRightAnswer = false)
@@ -78,15 +76,10 @@ class QuizViewModel(
         }
     }
 
-    fun saveRightAnswer(answer: String) {
-        rightAnswer = answer
-    }
-
-    @Composable
-    fun shuffleAnswers(): Array<String> {
-        val arrayRes = quiz.questions[currentIndex].answers
-        rightAnswer = stringArrayResource(arrayRes)[0]
-        return stringArrayResource(arrayRes).apply { shuffle() }
+    fun shuffleAnswers(answers: Array<String>): List<String> {
+        // first answer is the right one, so we save it before the shuffle
+        state = state.copy(rightAnswer = answers[0])
+        return answers.toList().shuffled()
     }
 
     class QuizViewModelFactory(
