@@ -1,11 +1,9 @@
 package com.carlosjordi.monthlychallenge03.ui.screens.quiz
 
 import android.os.CountDownTimer
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.res.stringArrayResource
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -37,7 +35,7 @@ class QuizViewModel(
         }
 
         override fun onFinish() {
-
+            onEvent(QuizEvent.TimeRunOut)
         }
     }
 
@@ -72,7 +70,21 @@ class QuizViewModel(
                     timer.start()
                 }
             }
-            QuizEvent.TimeRunOut -> TODO()
+            QuizEvent.TimeRunOut -> {
+                viewModelScope.launch {
+                    timer.cancel()
+                    state = state.copy(isRightAnswer = false)
+                    delay(2000L)
+                    currentIndex++
+                    state = state.copy(
+                        currentQuestion = quiz.questions[currentIndex],
+                        isOptionSelected = false,
+                        timer = 30,
+                        isRightAnswer = null
+                    )
+                    timer.start()
+                }
+            }
         }
     }
 
