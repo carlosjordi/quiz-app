@@ -28,7 +28,7 @@ class QuizViewModel(
 
     private val timer = object : CountDownTimer(TIMER, ONE_SECOND) {
         override fun onTick(remainingTime: Long) {
-            val timeInSeconds = (remainingTime / ONE_SECOND).toInt()
+            val timeInSeconds = (remainingTime / ONE_SECOND).toFloat()
             state = state.copy(
                 timer = timeInSeconds
             )
@@ -62,7 +62,7 @@ class QuizViewModel(
                     state = state.copy(
                         currentQuestion = quiz.questions[currentIndex],
                         isOptionSelected = false,
-                        timer = 30,
+                        timer = 30f,
                         isRightAnswer = null
                     )
                     timer.start()
@@ -77,7 +77,7 @@ class QuizViewModel(
                     state = state.copy(
                         currentQuestion = quiz.questions[currentIndex],
                         isOptionSelected = false,
-                        timer = 30,
+                        timer = 30f,
                         isRightAnswer = null
                     )
                     timer.start()
