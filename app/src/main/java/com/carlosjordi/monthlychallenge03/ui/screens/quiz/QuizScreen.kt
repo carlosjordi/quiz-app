@@ -1,7 +1,6 @@
 package com.carlosjordi.monthlychallenge03.ui.screens.quiz
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -30,11 +29,6 @@ fun QuizScreen(
                 confirmationOccurred = state.isRightAnswer,
                 onClick = viewModel::onEvent
             )
-        }
-        if (state.isOptionSelected) {
-            Button(onClick = { viewModel.onEvent(QuizEvent.ConfirmSelection) }) {
-                Text(text = "Confirm")
-            }
         }
     }
 }

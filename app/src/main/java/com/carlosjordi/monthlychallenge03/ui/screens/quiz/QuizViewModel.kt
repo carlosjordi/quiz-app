@@ -46,14 +46,12 @@ class QuizViewModel(
     fun onEvent(event: QuizEvent) {
         when (event) {
             is QuizEvent.SelectOption -> {
-                state = state.copy(
-                    isOptionSelected = true,
-                    selectedAnswer = event.option
-                )
-            }
-            QuizEvent.ConfirmSelection -> {
                 viewModelScope.launch {
                     timer.cancel()
+                    state = state.copy(
+                        isOptionSelected = true,
+                        selectedAnswer = event.option
+                    )
                     state = if (state.selectedAnswer == state.rightAnswer) {
                         state.copy(isRightAnswer = true)
                     } else {
