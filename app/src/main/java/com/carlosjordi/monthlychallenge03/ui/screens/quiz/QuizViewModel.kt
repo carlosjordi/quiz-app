@@ -53,7 +53,11 @@ class QuizViewModel(
                         selectedAnswer = event.option
                     )
                     state = if (state.selectedAnswer == state.rightAnswer) {
-                        state.copy(isRightAnswer = true)
+                        val scoreObtained = state.timer.toInt()
+                        state.copy(
+                            isRightAnswer = true,
+                            score = state.score.copy(score = state.score.score + scoreObtained)
+                        )
                     } else {
                         state.copy(isRightAnswer = false)
                     }
