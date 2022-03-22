@@ -1,8 +1,6 @@
 package com.carlosjordi.monthlychallenge03.ui.screens.quiz
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -14,6 +12,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.carlosjordi.monthlychallenge03.ui.screens.quiz.components.AnswerOption
 import com.carlosjordi.monthlychallenge03.ui.screens.quiz.components.Question
+import com.carlosjordi.monthlychallenge03.ui.screens.quiz.components.Score
 import com.carlosjordi.monthlychallenge03.ui.screens.quiz.components.Timer
 
 @Composable
@@ -25,12 +24,22 @@ fun QuizScreen(
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Question(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            text = stringResource(state.currentQuestion.question)
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Question(
+                modifier = Modifier
+                    .padding(16.dp),
+                text = stringResource(state.currentQuestion.question)
+            )
+            Score(
+                modifier = Modifier.
+                padding(end = 16.dp),
+                score = state.score.score
+            )
+        }
         Timer(
             modifier = Modifier
                 .fillMaxWidth()
