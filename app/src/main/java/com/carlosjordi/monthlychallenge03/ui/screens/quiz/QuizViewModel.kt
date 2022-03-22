@@ -67,7 +67,8 @@ class QuizViewModel(
                         currentQuestion = quiz.questions[currentIndex],
                         isOptionSelected = false,
                         timer = 30f,
-                        isRightAnswer = null
+                        isRightAnswer = null,
+                        selectedAnswer = ""
                     )
                     timer.start()
                 }
@@ -82,7 +83,8 @@ class QuizViewModel(
                         currentQuestion = quiz.questions[currentIndex],
                         isOptionSelected = false,
                         timer = 30f,
-                        isRightAnswer = null
+                        isRightAnswer = null,
+                        selectedAnswer = ""
                     )
                     timer.start()
                 }

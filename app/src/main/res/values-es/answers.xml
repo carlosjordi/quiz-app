@@ -13,4 +13,95 @@
         <item>Respuesta 33</item>
         <item>Respuesta 44</item>
     </string-array>
+
+    <string-array name="answers_03">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_04">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_05">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_06">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_07">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_08">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_09">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_10">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_11">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_12">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_13">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_14">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
+
+    <string-array name="answers_15">
+        <item>Respuesta 11</item>
+        <item>Respuesta 22</item>
+        <item>Respuesta 33</item>
+        <item>Respuesta 44</item>
+    </string-array>
 </resources>

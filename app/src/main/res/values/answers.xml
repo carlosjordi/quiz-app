@@ -13,4 +13,95 @@
         <item>Answer 33</item>
         <item>Answer 44</item>
     </string-array>
+
+    <string-array name="answers_03">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_04">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_05">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_06">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_07">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_08">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_09">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_10">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_11">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_12">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_13">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_14">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
+
+    <string-array name="answers_15">
+        <item>Answer 11</item>
+        <item>Answer 22</item>
+        <item>Answer 33</item>
+        <item>Answer 44</item>
+    </string-array>
 </resources>

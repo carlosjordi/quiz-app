@@ -2,4 +2,17 @@
 <resources>
     <string name="question_01">Pregunta de prueba</string>
     <string name="question_02">Pregunta de prueba 2</string>
+    <string name="question_03">Pregunta de prueba 3</string>
+    <string name="question_04">Pregunta de prueba 4</string>
+    <string name="question_05">Pregunta de prueba 5</string>
+    <string name="question_06">Pregunta de prueba 6</string>
+    <string name="question_07">Pregunta de prueba 7</string>
+    <string name="question_08">Pregunta de prueba 8</string>
+    <string name="question_09">Pregunta de prueba 9</string>
+    <string name="question_10">Pregunta de prueba 10</string>
+    <string name="question_11">Pregunta de prueba 11</string>
+    <string name="question_12">Pregunta de prueba 12</string>
+    <string name="question_13">Pregunta de prueba 13</string>
+    <string name="question_14">Pregunta de prueba 14</string>
+    <string name="question_15">Pregunta de prueba 15</string>
 </resources>

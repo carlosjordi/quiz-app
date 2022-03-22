@@ -35,8 +35,8 @@ fun QuizScreen(
                 text = stringResource(state.currentQuestion.question)
             )
             Score(
-                modifier = Modifier.
-                padding(end = 16.dp),
+                modifier = Modifier
+                    .padding(end = 16.dp),
                 score = state.score.score
             )
         }

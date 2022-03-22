@@ -3,4 +3,17 @@
 
     <string name="question_01">Testing question</string>
     <string name="question_02">Testing question 2</string>
+    <string name="question_03">Testing question 3</string>
+    <string name="question_04">Testing question 4</string>
+    <string name="question_05">Testing question 5</string>
+    <string name="question_06">Testing question 6</string>
+    <string name="question_07">Testing question 7</string>
+    <string name="question_08">Testing question 8</string>
+    <string name="question_09">Testing question 9</string>
+    <string name="question_10">Testing question 10</string>
+    <string name="question_11">Testing question 11</string>
+    <string name="question_12">Testing question 12</string>
+    <string name="question_13">Testing question 13</string>
+    <string name="question_14">Testing question 14</string>
+    <string name="question_15">Testing question 15</string>
 </resources>
