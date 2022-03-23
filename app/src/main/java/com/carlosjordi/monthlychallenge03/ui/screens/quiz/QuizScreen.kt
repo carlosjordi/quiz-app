@@ -3,6 +3,7 @@ package com.carlosjordi.monthlychallenge03.ui.screens.quiz
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -10,16 +11,27 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
+import com.carlosjordi.monthlychallenge03.navigation.Screen
 import com.carlosjordi.monthlychallenge03.ui.screens.quiz.components.AnswerOption
 import com.carlosjordi.monthlychallenge03.ui.screens.quiz.components.Question
 import com.carlosjordi.monthlychallenge03.ui.screens.quiz.components.Score
 import com.carlosjordi.monthlychallenge03.ui.screens.quiz.components.Timer
+import kotlinx.coroutines.flow.collect
 
 @Composable
 fun QuizScreen(
-    viewModel: QuizViewModel
+    viewModel: QuizViewModel = hiltViewModel(),
+    navController: NavHostController
 ) {
     val state = viewModel.state
+
+    LaunchedEffect(key1 = true) {
+        viewModel.navigateToSaveScore.collect { score ->
+            navController.navigate(Screen.SaveScore.route + "/$score")
+        }
+    }
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
