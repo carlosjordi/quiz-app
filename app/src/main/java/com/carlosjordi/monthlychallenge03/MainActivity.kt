@@ -12,7 +12,9 @@ import com.carlosjordi.monthlychallenge03.data.repository.QuizRepositoryImpl
 import com.carlosjordi.monthlychallenge03.ui.screens.quiz.QuizScreen
 import com.carlosjordi.monthlychallenge03.ui.screens.quiz.QuizViewModel
 import com.carlosjordi.monthlychallenge03.ui.theme.MonthlyChallenge03Theme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
