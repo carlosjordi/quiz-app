@@ -10,7 +10,7 @@ class ScoreRepositoryImpl(
         scoreDao.addScore(score)
     }
 
-    override fun getTopTenScores(): List<Score> {
+    override suspend fun getTopTenScores(): List<Score> {
         return scoreDao.getTopTenScores()
     }
 }

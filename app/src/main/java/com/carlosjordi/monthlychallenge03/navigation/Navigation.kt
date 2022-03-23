@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.carlosjordi.monthlychallenge03.ui.screens.quiz.QuizScreen
+import com.carlosjordi.monthlychallenge03.ui.screens.ranking.RankingScreen
 import com.carlosjordi.monthlychallenge03.ui.screens.save_score.ScoreScreen
 
 @Composable
@@ -28,7 +29,10 @@ fun QuizNavigation(
                 }
             )
         ) {
-            ScoreScreen()
+            ScoreScreen(navController = navController)
+        }
+        composable(route = Screen.Ranking.route) {
+            RankingScreen()
         }
     }
 }

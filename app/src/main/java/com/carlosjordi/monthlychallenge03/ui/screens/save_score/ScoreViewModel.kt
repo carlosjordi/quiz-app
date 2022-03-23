@@ -37,6 +37,7 @@ class ScoreViewModel @Inject constructor(
                 if (state.score.username == "") return
                 viewModelScope.launch {
                     scoreRepository.addScore(state.score)
+                    state = state.copy(saved = true)
                 }
             }
             is ScoreEvent.OnUsernameEntered -> {

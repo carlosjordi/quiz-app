@@ -4,5 +4,5 @@ import com.carlosjordi.monthlychallenge03.data.model.Score
 
 interface ScoreRepository {
     suspend fun addScore(score: Score)
-    fun getTopTenScores(): List<Score>
+    suspend fun getTopTenScores(): List<Score>
 }
