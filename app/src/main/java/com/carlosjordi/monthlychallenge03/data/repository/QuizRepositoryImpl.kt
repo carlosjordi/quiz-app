@@ -26,5 +26,8 @@ class QuizRepositoryImpl : QuizRepository {
         )
     )
 
-    override fun getQuiz(): Quiz = quiz
+    override fun getQuiz(): Quiz {
+        val tenRandomQuestions = quiz.questions.shuffled().take(10)
+        return quiz.copy(questions = tenRandomQuestions)
+    }
 }
